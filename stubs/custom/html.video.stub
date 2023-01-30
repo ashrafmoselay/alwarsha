@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    <div class="form-group">
+        <label class="{{ required }}">@lang('inputs.{{ trans_column }}')</label>
+        <div class="input-group">
+            @if (isset($row))
+                <div class="input-group-prepend">
+                    @include('backend.includes.buttons.input-buttons', ['url' => $row->{{ column }}, 'not_found' => 'Not Found'])
+                </div>
+            @endif
+            <div class="custom-file">
+                <input type="file" name="{{ column }}" class="custom-file-input cursor-pointer form-control" accept="video/*">
+                <label class="custom-file-label" for="upload-image"><i class="fa fa-upload"></i> Choose file</label>
+            </div>
+        </div>
+        <x-validation-error input="{{ column }}" />
+    </div>
+</div>

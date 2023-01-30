@@ -1,0 +1,102 @@
+label.required {
+    position: relative;
+}
+
+label.required::after {
+    content: '*';
+    color: red;
+    padding: 0px 7px;
+}
+
+span.error {
+    font-weight: bolder;
+}
+
+.copy {
+    position: relative;
+    cursor: pointer;
+    min-height: 40.5px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+.copy:hover {
+    background: #dbdbdb;
+}
+
+.copy::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f24d";
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+#search-form-body {
+    display: none;
+}
+
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before
+{
+    content: "/" !important;
+}
+
+.preview-modal-image {
+    cursor: pointer;
+}
+
+#modal-view-image img {
+    box-shadow: 0 0 10px 10px #00000070;
+}
+
+#modal-view-image button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#modal-view-image button:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: unset;
+    right: 0;
+}
+
+#messenger-icon {
+    position: fixed;
+    right: 25px;
+    bottom: 60px;
+    z-index: 10
+}
+
+#messenger-icon #all-unread-messages {
+    top: 0 !important;
+    left: -5px !important;
+    right: unset !important;
+}
+
+#messenger-icon a {
+    font-size:35px;
+}

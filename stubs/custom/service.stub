@@ -1,0 +1,33 @@
+<?php
+
+namespace {{ namespace }};
+
+use Exception;
+use {{ modelNamespace }};
+use App\Traits\UploadFile;
+
+class {{ class }}
+{
+    use UploadFile;
+
+    public function handle($request, $id = null)
+    {
+        try {
+            $this->saveFiles($request);
+
+            return {{ model }}::updateOrCreate(['id' => $id], $request);
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+
+    protected function saveFiles(&$request)
+    {
+        foreach (request()->allFiles() as $key => $value) {
+            if ($value && isset($request[$key])) {
+                [$width, $height] = getimagesize($value);
+                $request[$key] = $this->uploadImage($value, (new {{ model }})->getTable(), $width, $height);
+            }
+        }
+    }
+}

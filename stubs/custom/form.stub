@@ -1,0 +1,24 @@
+
+@once
+    @push('style')
+        <style>
+            {{-- CSS Style --}}
+        </style>
+    @endpush
+@endonce
+
+
+<div class='row'>
+    {{-- HTML Code --}}
+</div>
+
+
+@once
+    @push('script')
+        <script>
+            $(function() {
+                {{-- JS Code --}}
+            })
+        </script>
+    @endpush
+@endonce
