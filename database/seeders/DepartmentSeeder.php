@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Department;
+use App\Models\Service;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,24 +19,84 @@ class DepartmentSeeder extends Seeder
         truncateTables('departments');
 
         $departments = [
-            ['title' => 'superadmin',    'email' => 'super_admin@ivas.com1', ],
-            ['title' => 'RBT',           'email' => 'super_admin@ivas.com2', ],
-            ['title' => 'Subscriptions', 'email' => 'super_admin@ivas.com3', ],
-            ['title' => 'Social Media',  'email' => 'super_admin@ivas.com4', ],
-            ['title' => 'Multimedia',    'email' => 'super_admin@ivas.com5', ],
-            ['title' => 'Development',   'email' => 'super_admin@ivas.com6', ],
-            ['title' => 'IT',            'email' => 'super_admin@ivas.com7', ],
-            ['title' => 'Legal',         'email' => 'super_admin@ivas.com8', ],
-            ['title' => 'CEO Assistant', 'email' => 'super_admin@ivas.com9', ],
-            ['title' => 'Quality',       'email' => 'super_admin@ivas.com10',],
-            ['title' => 'RBT Upload',    'email' => 'super_admin@ivas.com11',],
-            ['title' => 'Reports',       'email' => 'super_admin@ivas.com12',],
-            ['title' => 'Finance',       'email' => 'super_admin@ivas.com13',],
-            ['title' => 'HR',            'email' => 'super_admin@ivas.com14',],
-            ['title' => 'Content',       'email' => 'super_admin@ivas.com15',],
+            ['title' => 'الميكانيكا'],
+            ['title' => 'كهرباء'],
+            ['title' => 'السمكرة والدهان'],
+            ['title' => 'خدمات الإطارات'],
         ];
 
         foreach ($departments as $department)
             Department::firstOrCreate(['title' => $department['title']], $department);
+
+        $services = [
+            [
+                'title'=>'رش جزئئ',
+                'department_id'=>3,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'رش صدام',
+                'department_id'=>3,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'رش كامل (سيارة صغيرة)	',
+                'department_id'=>3,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'سمكرة',
+                'department_id'=>3,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'اصلاح دينمو',
+                'department_id'=>2,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'تركيب كمبروسير جديد',
+                'department_id'=>2,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'تغيير طرمبة بنزين داخلية	',
+                'department_id'=>1,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'تغيير كلتش',
+                'department_id'=>1,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'إصلاح كفر',
+                'department_id'=>4,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'تغيير كفر',
+                'department_id'=>4,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+            [
+                'title'=>'وزن أذرعة',
+                'department_id'=>4,
+                'service_price'=>rand(100,300),
+                'min_price'=>rand(80,100)
+            ],
+        ];
+        foreach ($services as $service)
+            Service::firstOrCreate(['title' => $service['title']], $service);
     }
 }

@@ -15,7 +15,7 @@ class Client extends User
 
     protected $table = 'clients';
 
-    protected $fillable = ['username', 'email', 'password', 'phone', 'image'];
+    protected $fillable = ['username', 'email', 'password', 'phone', 'image','type','contact_name'];
 
     protected function image(): Attribute
 	{

@@ -76,7 +76,7 @@ class ClientDataTable extends DataTable
         ])
         ->responsive(true)
         ->parameters(
-            $this->initComplete('')
+            $this->initComplete('1,2,3,4,5')
         );
     }
 
@@ -89,8 +89,10 @@ class ClientDataTable extends DataTable
     {
         return [
             Column::make('check')->title('<label class="skin skin-square p-0 m-0"><input data-color="red" type="checkbox" class="switchery" id="check-all" style="width: 25px"></label>')->exportable(false)->printable(false)->orderable(false)->searchable(false)->width(15)->addClass('text-center')->footer(trans('buttons.delete')),
-			Column::make('username')->title(trans('inputs.username')),
-			Column::make('email')->title(trans('inputs.email')),
+			Column::make('username')->title(trans('inputs.clientname')),
+            Column::make('email')->title(trans('inputs.email')),
+            Column::make('type')->title('تصنيف العميل'),
+			Column::make('contact_name')->title('اسم المسؤول'),
 			Column::make('phone')->title(trans('inputs.phone')),
 			Column::make('image')->title(trans('inputs.image')),
             Column::computed('action')->exportable(false)->printable(false)->width(75)->addClass('text-center')->footer(trans('inputs.action'))->title(trans('inputs.action')),

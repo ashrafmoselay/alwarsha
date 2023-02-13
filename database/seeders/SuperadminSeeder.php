@@ -23,7 +23,7 @@ class SuperadminSeeder extends Seeder
 
         $data = [
             'code'                  => 111111,
-            'name'                  => 'Ashraf',
+            'name'                  => 'أشرف حسان',
             'email'                 => 'admin@admin.com',
             'password'              => 123456,
             'department_id'         => Department::first()->id,

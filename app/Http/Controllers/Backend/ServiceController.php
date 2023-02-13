@@ -14,10 +14,8 @@ use Yajra\DataTables\Services\DataTable;
 
 class ServiceController extends BackendController
 {
-    public bool $full_page_ajax  = false;
     public bool $use_form_ajax   = true;
-    public bool $use_button_ajax = false;
-    public string $view_sub_path = '';
+    public bool $use_button_ajax = true;
 
     public function store(ServiceRequest $request, ServiceService $ServiceService)
     {
@@ -40,7 +38,7 @@ class ServiceController extends BackendController
     public function append(): array
     {
         return [
-            
+
 			'departments' => \App\Models\Department::pluck('title', 'id'),
         ];
     }

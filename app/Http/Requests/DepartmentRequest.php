@@ -25,7 +25,6 @@ class DepartmentRequest extends FormRequest
     {
         return [
             'title' => 'required|string|unique:departments,title,'.request()->route('department'),
-            'email' => 'required|email|unique:departments,email,'.request()->route('department'),
             'manager_id' => 'required|numeric|exists:users,id',
         ];
     }
@@ -34,7 +33,6 @@ class DepartmentRequest extends FormRequest
     {
         return [
             'title' => trans('inputs.title'),
-            'email' => trans('inputs.email'),
             'manager_id' => trans('inputs.manager'),
         ];
     }

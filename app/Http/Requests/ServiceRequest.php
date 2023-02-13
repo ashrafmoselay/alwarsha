@@ -30,10 +30,12 @@ class ServiceRequest extends FormRequest
 			'durationPeriodType' => 'required|string',
 			'warrantyPeriodValue' => 'nullable|string',
 			'warrantyPeriodType' => 'required|string',
+            'service_price'=>'required|numeric',
+            'min_price'=>'required|numeric',
 			'active' => 'nullable|boolean',
 			'allowPriceChangeInTicket' => 'nullable|boolean',
 			'department_id' => 'required|numeric|exists:departments,id',
-			
+
         ];
     }
 
@@ -54,7 +56,7 @@ class ServiceRequest extends FormRequest
 			'active' => trans('inputs.active'),
 			'allowPriceChangeInTicket' => trans('inputs.allowPriceChangeInTicket'),
 			'department_id' => trans('menu.departments'),
-			
+
         ];
     }
 

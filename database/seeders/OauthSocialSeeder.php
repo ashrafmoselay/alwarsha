@@ -22,22 +22,26 @@ class OauthSocialSeeder extends Seeder
                 'display_name'  => 'Github',
                 'name'          => 'github',
                 'icon'          => 'fa-brands fa-github',
-                'color'         => '#444444'
+                'color'         => '#444444',
+                'active'=>0
             ], [
                 'display_name'  => 'Google',
                 'name'          => 'google',
                 'icon'          => 'fa-brands fa-google',
-                'color'         => '#dd4b39'
+                'color'         => '#dd4b39',
+                'active'=>0
             ], [
                 'display_name'  => 'Gitlab',
                 'name'          => 'gitlab',
                 'icon'          => 'fa-brands fa-gitlab',
-                'color'         => '#FF7E39'
+                'color'         => '#FF7E39',
+                'active'=>0
             ], [
                 'display_name'  => 'Facebook',
                 'name'          => 'facebook',
                 'icon'          => 'fa-brands fa-facebook-f',
-                'color'         => '#3b5998'
+                'color'         => '#3b5998',
+                'active'=>0
             ],
         ];
 

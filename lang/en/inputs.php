@@ -110,4 +110,56 @@ return [
 	'durationPeriodType' => 'DurationPeriodType',
 	'warrantyPeriodValue' => 'WarrantyPeriodValue',
 	'warrantyPeriodType' => 'WarrantyPeriodType',
+
+
+	// MANUFACTURERS
+	'slug' => 'Slug',
+
+
+	// MODELES
+
+
+	// SHOPES
+	'contact_person' => 'Contact Person',
+	'contact_no' => 'Contact No',
+	'license_no' => 'License No',
+	'vat_number' => 'Vat Number',
+	'address' => 'Address',
+	'logo' => 'Logo',
+	'seal' => 'Seal',
+
+
+	// INCOME_EXPENSES_GROUPS
+
+
+	// INCOME_EXPENSES
+	'transaction_date' => 'Transaction Date',
+	'comments' => 'Comments',
+	'amount' => 'Amount',
+	'vat_value' => 'Vat Value',
+
+
+	// SPAREPARTS
+	'code' => 'Code',
+	'tax' => 'Tax',
+	'deleted_at' => 'Deleted At',
+
+
+	// SPAREPART_SHOP
+	'cost' => 'Cost',
+	'price' => 'Price',
+	'lowest_price' => 'Lowest Price',
+	'quantity' => 'Quantity',
+	'location' => 'Location',
+	'notify_limit' => 'Notify Limit',
+	'starting_stock' => 'Starting Stock',
+
+
+	// CARS
+	'plateNo' => 'PlateNo',
+	'contactNo' => 'ContactNo',
+	'year' => 'Year',
+	'odoMeterKm' => 'OdoMeterKm',
+	'vin' => 'Vin',
+	'details' => 'Details',
 ];

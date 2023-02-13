@@ -134,4 +134,39 @@ return [
     'service' => 'خدمة',
     'the service' => 'الخدمة',
 
+    //MANUFACTURERS,
+    'manufacturers'=>'الماركات',
+    'manufacturer'=>'ماركة',
+    'the manufacturer'=>'الماركة',
+
+    //modeles
+    'modeles'=>'الموديلات',
+    'modele'=>'موديل',
+    'the modele'=>'الموديل',
+
+    //shopes
+    'shopes'=>'مراكز الصيانة',
+    'shope'=>'مركز صيانة',
+    'the shope'=>'مركز الصيانة',
+
+    //IncomeExpensesGroup
+    'income_expenses_groups'=>'انواع النفقات والإيرادات',
+    'income_expenses_group'=>'نوع',
+    'the income_expenses_group'=>'النوع',
+
+    'income_expenses'=>'النفقات والإيرادات',
+    'income_expense'=>'نفقه او ايرد',
+    'the income_expense'=>'النفقه او الايرد',
+
+    'spareparts'=>'قطع الغيار',
+    'sparepart'=>'قطعة غيار',
+    'the sparepart'=>'القطعة',
+
+    'sparepart_shop'=>'المخزون بالمستودع',
+
+
+    'cars'=>'المركبات',
+    'car'=>'مركبة',
+    'the car'=>'المركبة',
+
 ];

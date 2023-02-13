@@ -28,12 +28,39 @@ class MenuSeeder extends Seeder
                 'name' => ["en" => "Dashboard", "ar" => "لوحة التحكم"],
                 'route' => "/",
                 'icon' => "fas fa-tachometer",
+            ],
+            [
+                'name' => ["en" => "System Setup", "ar" => "إدارة النظام"],
+                'route' => null,
+                'icon' => "fas fa-tools",
+                'parent_id' => null
+            ],
+            [
+                'name' => ["en" => "IncomeExpenses", "ar" => "النفقات والإيرادات"],
+                'route' => "income_expenses.index",
+                'icon' => "fas fa-money-bill-alt",
+            ],
+            [
+                'name' => ["en" => "Stock Mangment", "ar" => "إدارة المخزون"],
+                'route' => null,
+                'icon' => "fas fa-store-alt",
+                'parent_id' => null
             ], [
+                'name' => ["en" => "Clients", "ar" => "العملاء"],
+                'icon' => "fa-solid fa-walking",
+                'route' => "clients.index",
+            ],[
+                'name' => ["en" => "Cars", "ar" => "المركبات"],
+                'icon' => "fa-solid fa-car",
+                'route' => "cars.index",
+            ],
+            [
                 'name' => ["en" => "Configurations", "ar" => "التكوينات"],
                 'route' => null,
                 'icon' => "fa fa-gears",
                 'parent_id' => null
-            ], [
+            ],
+            [
                 'name' => ["en" => "Countries", "ar" => "البلاد"],
                 'icon' => "fas fa-globe-africa",
             ], [
@@ -47,10 +74,12 @@ class MenuSeeder extends Seeder
                 'name' => ["en" => "Permissions", "ar" => "الأذونات"],
                 'route' => "permissions.index",
                 'icon' => "fas fa-shield",
-            ], [
-                'name' => ["en" => "Departments", "ar" => "الأقسام"],
-                'icon' => "fas fa-home",
-            ], [
+            ],
+            // [
+            //     'name' => ["en" => "Departments", "ar" => "الأقسام"],
+            //     'icon' => "fas fa-home",
+            // ],
+            [
                 'name' => ["en" => "Users", "ar" => "المستخدمين"],
                 'icon' => "fas fa-users",
             ], [
@@ -61,10 +90,6 @@ class MenuSeeder extends Seeder
                 'name' => ["en" => "Languages", "ar" => "اللغات"],
                 'icon' => "fa-solid fa-language",
                 'route' => "languages.index",
-            ], [
-                'name' => ["en" => "Clients", "ar" => "العملاء"],
-                'icon' => "fa-solid fa-user-secret",
-                'route' => "clients.index",
             ],
         ];
 
@@ -77,7 +102,8 @@ class MenuSeeder extends Seeder
         $Countries = Menu::where('name->en', 'Countries')->First()->id;
         $Routes = Menu::where('name->en', 'Routes')->First()->id;
         $Users = Menu::where('name->en', 'Users')->First()->id;
-        $Departments = Menu::where('name->en', 'Departments')->First()->id;
+        $SystemSetup = Menu::where('name->en', 'System Setup')->First()->id;
+        $StockMangment = Menu::where('name->en', 'Stock Mangment')->First()->id;
         $menus = [
             [
                 'name' => ["en" => "Simulate", "ar" => "المحاكاة"],
@@ -153,17 +179,82 @@ class MenuSeeder extends Seeder
                 'route' => "users.index",
                 'icon' => "fas fa-list",
                 'parent_id' => $Users
-            ], [
+            ],
+
+            [
                 'name' => ["en" => "list Departments", "ar" => "عرض الأقسام"],
                 'route' => "departments.index",
                 'icon' => "fa fa-list",
-                'parent_id' => $Departments
+                'parent_id' => $SystemSetup
             ], [
-                'name' => ["en" => "Create Departments", "ar" => "إنشاء قسم"],
-                'route' => "departments.create",
-                'icon' => "fa fa-plus",
-                'parent_id' => $Departments
-            ], [
+                'name' => ["en" => "list Services", "ar" => "عرض الخدمات"],
+                'route' => "services.index",
+                'icon' => "fa fa-list-alt",
+                'parent_id' => $SystemSetup
+            ],
+            [
+                'name' => ["en" => "list Manufacturers", "ar" => "عرض الماركات"],
+                'route' => "manufacturers.index",
+                'icon' => "fa fa-th-large",
+                'parent_id' => $SystemSetup
+            ],
+            [
+                'name' => ["en" => "list Modeles", "ar" => "عرض الموديلات"],
+                'route' => "modeles.index",
+                'icon' => "fa fa-th",
+                'parent_id' => $SystemSetup
+            ],
+            [
+                'name' => ["en" => "list Shopes", "ar" => "مراكز الصيانة"],
+                'route' => "shopes.index",
+                'icon' => "fa fa-warehouse",
+                'parent_id' => $SystemSetup
+            ],
+            [
+                'name' => ["en" => "list IncomeExpensesGroup", "ar" => "انواع النفقات والإيرادات"],
+                'route' => "income_expenses_groups.index",
+                'icon' => "fa fa-file-invoice-dollar",
+                'parent_id' => $SystemSetup
+            ],
+            [
+                'name' => ["en" => "list spareparts", "ar" => "كتالوج قطع الغيار"],
+                'route' => 'spareparts.index',
+                'icon' => "fas fa-book",
+                'parent_id' => $StockMangment
+            ],
+            [
+                'name' => ["en" => "list sparepartShop", "ar" => "المخزون بالمستودع"],
+                'route' => 'sparepart_shop.index',
+                'icon' => "fa fa-cubes",
+                'parent_id' => $StockMangment
+            ],
+            [
+                'name' => ["en" => "list storeSales", "ar" => "مبيعات المستودع"],
+                'route' => null,
+                'icon' => "fa fa-shopping-cart",
+                'parent_id' => $StockMangment
+            ],
+            [
+                'name' => ["en" => "list stockActivities", "ar" => "أنشطة المخزون"],
+                'route' => null,
+                'icon' => "fa fa-clock",
+                'parent_id' => $StockMangment
+            ],
+            [
+                'name' => ["en" => "list receivedFromSupplier", "ar" => "مستلمة من الموزع"],
+                'route' => null,
+                'icon' => "fa fa-cart-plus",
+                'parent_id' => $StockMangment
+            ],
+            [
+                'name' => ["en" => "list returnedToSupplier", "ar" => "معادة  للموزع"],
+                'route' => null,
+                'icon' => "fa fa-cart-arrow-down",
+                'parent_id' => $StockMangment
+            ],
+
+
+            [
                 'name' => ["en" => "Create Users", "ar" => "إنشاء مستخدم"],
                 'route' => "users.create",
                 'icon' => "fas fa-plus",

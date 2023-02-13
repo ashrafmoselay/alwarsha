@@ -142,5 +142,56 @@ Route::resource('social_medias', 'SocialMediaController');
 Route::post('social_medias/multidelete', 'SocialMediaController@multidelete')->name('social_medias.multidelete');
 Route::post('social_medias/{oauth_social}/column/{column}/toggle', 'SocialMediaController@columnToggle')->name('social_medias.column.toggle');
 
-Route::resource('services', 'ServiceController'); 
-Route::post('services/multidelete', 'ServiceController@multidelete')->name('services.multidelete'); 
+Route::resource('services', 'ServiceController');
+Route::post('services/multidelete', 'ServiceController@multidelete')->name('services.multidelete');
+
+Route::resource('manufacturers', 'ManufacturerController');
+Route::controller('ManufacturerController')->group(function () {
+    Route::post('manufacturers/multidelete', 'multidelete')->name('manufacturers.multidelete');
+    Route::post('manufacturers/{manufacturer}/column/{column}/toggle', 'columnToggle')->name('manufacturers.column.toggle');
+    Route::get('manufacturers/excel/export', 'export')->name('manufacturers.excel.export');
+    Route::get('manufacturers/excel/import', 'import')->name('manufacturers.excel.import.form');
+    Route::post('manufacturers/excel/import', 'saveImport')->name('manufacturers.excel.import');
+    Route::get('manufacturers/search/form', 'search')->name('manufacturers.search.form');
+});
+
+Route::resource('modeles', 'ModeleController');
+
+Route::controller('ModeleController')->group(function () {
+    Route::post('modeles/multidelete', 'multidelete')->name('modeles.multidelete');
+    Route::post('modeles/{manufacturer}/column/{column}/toggle', 'columnToggle')->name('modeles.column.toggle');
+    Route::get('modeles/excel/export', 'export')->name('modeles.excel.export');
+    Route::get('modeles/excel/import', 'import')->name('modeles.excel.import.form');
+    Route::post('modeles/excel/import', 'saveImport')->name('modeles.excel.import');
+});
+
+Route::resource('shopes', 'ShopeController');
+Route::post('shopes/multidelete', 'ShopeController@multidelete')->name('shopes.multidelete');
+
+Route::resource('income_expenses_groups', 'IncomeExpensesGroupController');
+Route::post('income_expenses_groups/multidelete', 'IncomeExpensesGroupController@multidelete')->name('income_expenses_groups.multidelete');
+
+Route::resource('income_expenses', 'IncomeExpenseController');
+Route::post('income_expenses/multidelete', 'IncomeExpenseController@multidelete')->name('income_expenses.multidelete');
+
+Route::resource('spareparts', 'SparepartController');
+Route::controller('SparepartController')->group(function () {
+    Route::post('spareparts/multidelete', 'multidelete')->name('spareparts.multidelete');
+    Route::get('spareparts/excel/export', 'export')->name('spareparts.excel.export');
+    Route::get('spareparts/excel/import', 'import')->name('spareparts.excel.import.form');
+    Route::post('spareparts/excel/import', 'saveImport')->name('spareparts.excel.import');
+});
+
+Route::get('storeStock', 'StoreStockController@index')->name('storeStock.index');
+
+
+Route::resource('sparepart_shop', 'SparepartShopController');
+Route::controller('SparepartShopController')->group(function () {
+    Route::post('sparepart_shop/multidelete', 'multidelete')->name('sparepart_shop.multidelete');
+    Route::get('sparepart_shop/excel/export', 'export')->name('sparepart_shop.excel.export');
+    Route::get('sparepart_shop/excel/import', 'import')->name('sparepart_shop.excel.import.form');
+    Route::post('sparepart_shop/excel/import', 'saveImport')->name('sparepart_shop.excel.import');
+});
+
+Route::resource('cars', 'CarController'); 
+Route::post('cars/multidelete', 'CarController@multidelete')->name('cars.multidelete'); 

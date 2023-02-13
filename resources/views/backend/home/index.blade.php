@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="col-12">
+<div style="display: none;" class="col-12">
     <iframe id="AssetPin" width="100%" height="600" src="{{route('dashboard.loadeasypin')}}?cord=&name="></iframe>
 </div>
 

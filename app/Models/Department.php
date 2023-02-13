@@ -14,7 +14,7 @@ class Department extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['title', 'email', 'manager_id'];
+    protected $fillable = ['title', 'manager_id'];
 
     public function manager()
     {

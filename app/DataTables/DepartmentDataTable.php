@@ -87,7 +87,6 @@ class DepartmentDataTable extends DataTable
             Column::make('check')->title('<label class="skin skin-square p-0 m-0"><input data-color="red" type="checkbox" class="switchery" id="check-all" style="width: 25px"></label>')->exportable(false)->printable(false)->orderable(false)->searchable(false)->width(15)->addClass('text-center')->footer(trans('buttons.delete')),
             Column::make('id')->title('#')->width('70px'),
             Column::make('title')->title(trans('inputs.title')),
-            Column::make('email')->title(trans('inputs.email')),
             Column::make('manager.name')->title(trans('inputs.manager'))->footer(trans('inputs.manager'))->orderable(false),
             Column::computed('users')->exportable(false)->printable(false)->width(75)->addClass('text-center')->title(trans('menu.users'))->footer(trans('menu.users')),
             Column::computed('action')->exportable(false)->printable(false)->width(75)->addClass('text-center')->title(trans('inputs.action'))->footer(trans('inputs.action')),

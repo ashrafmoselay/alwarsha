@@ -17,7 +17,6 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('title')->unique();
-            $table->string('email')->unique();
             $table->timestamps();
         });
     }

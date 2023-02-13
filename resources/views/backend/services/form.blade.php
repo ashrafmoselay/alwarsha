@@ -50,6 +50,35 @@
     {{-- END description --}}
 </div>
 
+<div class="col-md-6">
+    {{-- START service_price --}}
+    <div class="form-group">
+        <label class="required">@lang('inputs.service_price')</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-pencil"></i> </span>
+            </div>
+            <input type="number" class="form-control" name="service_price" required value="{{ $row->service_price ?? old('service_price') }}"  placeholder="@lang('inputs.service_price')">
+        </div>
+        <x-validation-error input='service_price' />
+    </div>
+    {{-- END service_price --}}
+</div>
+
+<div class="col-md-6">
+    {{-- START min_price --}}
+    <div class="form-group">
+        <label class="required">@lang('inputs.min_price')</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-pencil"></i> </span>
+            </div>
+            <input type="number" class="form-control" name="min_price" required value="{{ $row->min_price ?? old('min_price') }}"  placeholder="@lang('inputs.min_price')">
+        </div>
+        <x-validation-error input='min_price' />
+    </div>
+    {{-- END min_price --}}
+</div>
 
 <div class="col-md-6">
     {{-- START durationPeriodValue --}}

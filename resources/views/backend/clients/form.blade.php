@@ -1,13 +1,28 @@
 <div class='row'>
     <div class="col-md-7">
+        @php
+            $typeList = ['شركة','حكومة','فرد'];
+        @endphp
+        <div class="form-group">
+            <label class="control-label required">تصنيف العميل</label><br>
+            <div class="controls">
+                <select class="form-control select2" data-placeholder="تصنيف العميل" name="type" required>
+                @foreach ($typeList as $type)
+                    <option value="{{ $type }}" @selected(isset($row) && $type == $row->type)> {{ $type }} </option>
+                @endforeach
+                </select>
+            </div>
+            <x-validation-error input='type' />
+        </div>
+
         {{-- START email --}}
         <div class="form-group">
-            <label class="required">@lang('inputs.email')</label>
+            <label>@lang('inputs.email')</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                 </div>
-                <input type="text" class="form-control" name="email" required value="{{ $row->email ?? old('email') }}"  placeholder="@lang('inputs.email')">
+                <input type="text" class="form-control" name="email" value="{{ $row->email ?? old('email') }}"  placeholder="@lang('inputs.email')">
             </div>
             <x-validation-error input='email' />
         </div>
@@ -15,12 +30,12 @@
 
         {{-- START username --}}
         <div class="form-group">
-            <label class="required">@lang('inputs.username')</label>
+            <label class="required">@lang('inputs.clientname')</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa-solid fa-user-secret"></i> </span>
                 </div>
-                <input type="text" class="form-control" name="username" required value="{{ $row->username ?? old('username') }}"  placeholder="@lang('inputs.username')">
+                <input type="text" class="form-control" name="username" required value="{{ $row->username ?? old('username') }}"  placeholder="@lang('inputs.clientname')">
             </div>
             <x-validation-error input='username' />
         </div>
@@ -39,18 +54,19 @@
         </div>
         {{-- END phone --}}
 
-        {{-- START PASSWORD --}}
+        {{-- START contact_name --}}
         <div class="form-group">
-            <label class="{{ isset($row) ? '' : 'required' }}">@lang('inputs.password')</label>
+            <label class="required">اسم المسؤول</label>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text show-password"> <i class="fas fa-lock"></i> </span>
+                    <span class="input-group-text"> <i class="fa-solid fa-phone-volume"></i> </span>
                 </div>
-                <input type="password" class="form-control" name="password" placeholder=" @lang('inputs.password')" {{ isset($row) ? '' : 'required' }}>
+                <input type="text" class="form-control" name="contact_name"  value="{{ $row->contact_name ?? old('contact_name') }}"  placeholder="اسم المسؤول">
             </div>
-            <x-validation-error input='password' />
+            <x-validation-error input='contact_name' />
         </div>
-        {{-- END PASSWORD --}}
+        {{-- END phone --}}
+
     </div>
 
     <div class="col-md-5">

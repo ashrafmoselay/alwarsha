@@ -118,5 +118,60 @@ return [
 	'durationPeriodType' => 'الفترة',
 	'warrantyPeriodValue' => 'ضمان الخدمة',
 	'warrantyPeriodType' => 'الفترة',
-    'allowPriceChangeInTicket'=>'السماح بتغيير السعر من كرت الصيانة'
+    'allowPriceChangeInTicket'=>'السماح بتغيير السعر من كرت الصيانة',
+    'service_price'=>'سعر الخدمة',
+    'min_price'=>'أقل سعر للخدمة',
+
+
+	// MANUFACTURERS
+	'slug' => 'Slug',
+
+
+	// MODELES
+
+
+	// SHOPES
+	'contact_person' => 'اسم مدير المركز',
+	'contact_no' => 'رقم الاتصال',
+	'license_no' => 'السجل التجاري',
+	'vat_number' => 'الرقم الضريبي',
+	'address' => 'العنوان',
+	'logo' => 'اللوجو',
+	'seal' => 'صورة الختم',
+
+
+	// INCOME_EXPENSES_GROUPS
+
+
+	// INCOME_EXPENSES
+	'transaction_date' => 'تاريخ العملية',
+	'comments' => 'التعليق',
+	'amount' => 'المبلغ',
+	'vat_value' => 'قيمة الضريبة',
+
+
+	// SPAREPARTS
+	'code' => 'الكود',
+	'tax' => 'الضريبة',
+	'deleted_at' => 'تاريخ الحذف',
+
+
+	// SPAREPART_SHOP
+	'cost' => 'سعر التكلفة',
+	'price' => 'سعر البيع',
+	'lowest_price' => 'أقل سعر للبيع',
+	'quantity' => 'المخزون الحالي',
+	'location' => 'موقع تخزين القطعة',
+	'notify_limit' => 'الحد الأدنى للمخزون',
+	'starting_stock' => 'المخزون الإبتدائي',
+    'clientname'=>'اسم العميل',
+
+
+	// CARS
+	'plateNo' => 'رقم اللوحة',
+	'contactNo' => 'رقم الاتصال',
+	'year' => 'سنة الصنع',
+	'odoMeterKm' => 'كم',
+	'vin' => 'رقم الهيكل',
+	'details' => 'التفاصيل',
 ];

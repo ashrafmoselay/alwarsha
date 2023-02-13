@@ -26,10 +26,12 @@ class ClientRequest extends FormRequest
     {
         $pass_validation = request()->route('client') ? "nullable" : "required";
         return [
-            'username' => 'required|string|unique:clients,username,'.request()->route('client'),
-			'email' => 'required|string|unique:users,email|unique:clients,email,'.request()->route('client'),
-            'password' => [$pass_validation, Password::defaults()->min(8)->mixedCase()->numbers()->symbols()->uncompromised()],
-			'phone' => 'nullable|string|min:11|unique:clients,phone,'.request()->route('client'),
+            'username' => 'required|string',
+			'email' => 'nullable|string|unique:users,email|unique:clients,email,'.request()->route('client'),
+            //'password' => [$pass_validation, Password::defaults()->min(8)->mixedCase()->numbers()->symbols()->uncompromised()],
+			'type'=>'required|string',
+            'contact_name'=>'required|string',
+            'phone' => 'nullable|string|min:11|unique:clients,phone,'.request()->route('client'),
 			'image' => 'nullable|image|mimes:png,jpg,jpeg'
         ];
     }

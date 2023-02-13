@@ -26,7 +26,7 @@ class SettingSeeder extends Seeder
                 'autoload' => true,
             ], [
                 'key' => 'site_name',
-                'value' => env('APP_NAME', 'Project Name Here'),
+                'value' => env('APP_NAME', 'الورشة لصيانة السيارات'),
                 'content_type_id' => ContentType::where('name', 'LIKE', '%Normal Text%')->first()->id,
                 'active' => true,
                 'autoload' => true,
